@@ -1,7 +1,8 @@
-from sqlalchemy import create_engine, MetaData, Table
+from sqlalchemy import create_engine, MetaData
 
 from app.core.database import engine
+from app.core.base import Base
 
 metadata = MetaData()
 
-metadata.create_all(engine)
+Base.metadata.create_all(engine)
