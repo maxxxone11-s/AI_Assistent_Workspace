@@ -1,11 +1,10 @@
 from fastapi import APIRouter
 
+from app.schemas.user_schema import UserResponse
+from app.services.user_service import get_user
+
 router = APIRouter(prefix="/users", tags=["users"])
 
-@router.get("/",)
+@router.get("/", response_model=UserResponse)
 async def user():
-    return {
-        "id": 1,
-        "name": "Max",
-        "email": "max@gamil.com"
-    }
+    return get_user()
