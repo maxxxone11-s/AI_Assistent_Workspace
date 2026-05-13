@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-router = APIRouter(prefix="/user", tags=["users"])
+router = APIRouter(prefix="/users", tags=["users"])
 
 @router.get("/",)
 async def user():
